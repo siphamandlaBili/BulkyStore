@@ -1,0 +1,22 @@
+﻿@model CategoryModel
+<h2 class="text-primary">create listing</h2>
+
+<form action="post">
+    <div class="border p-3 mt-4">
+        <div class="mb-3">
+            <div>
+                <label asp-for="Name" class="form-label mt-4"></label>
+                <input asp-for="Name" class="form-control" placeholder="Enter cartegory">
+            </div>
+            
+        </div>
+        <div class="mb-3">
+        <div>
+                <label asp-for="DisplayOrder" class="form-label mt-4"></label>
+            <input asp-for="DisplayOrder" class="form-control" placeholder="Enter display order">
+        </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+</form>
