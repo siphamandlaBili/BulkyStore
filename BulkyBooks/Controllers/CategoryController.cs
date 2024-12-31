@@ -21,5 +21,16 @@ namespace BulkyBooks.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Create(CategoryModel obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.categories.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
 }
