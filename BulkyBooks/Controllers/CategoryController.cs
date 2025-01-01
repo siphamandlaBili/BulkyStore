@@ -49,14 +49,16 @@ namespace BulkyBooks.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Edit(CategoryModel obj)
+        public object? Edit(CategoryModel obj)
         {
             if (ModelState.IsValid)
             {
                 _db.categories.Update(obj);
                 _db.SaveChanges();
+                TempData["succses"] = "Category edited succsessfully";
                 return RedirectToAction("Index");
             }
+            TempData["error"] = "Category not edited succsessfully";
             return View();
         }
 

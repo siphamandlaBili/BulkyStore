@@ -1,0 +1,21 @@
+﻿@model CategoryModel
+
+
+<h2 class="text-primary">Delete Confirmation</h2>
+
+<div class="border p-3 mt-4">
+    <p>Are you sure you want to delete the category</p>
+
+    <form asp-action="Delete" method="post">
+        <!-- Hidden input to bind the Id -->
+        <input type="hidden" asp-for="Id" />
+
+        <!-- Red Delete Button -->
+        <button type="submit" class="btn btn-danger" style="background-color: red; border-color: red;">
+            Delete
+        </button>
+
+        <!-- Cancel Link -->
+        <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+</div>
