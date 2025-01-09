@@ -1,0 +1,62 @@
+﻿@page
+@model BulkyRazor.Pages.Cat.IndexModel
+
+ <div class="container"> 
+     <div class="row p-4"> 
+    <div class="col-6"> 
+         <h2 action="text-primary"> 
+            Category List 
+         </h2>
+     </div> 
+    <div class="col-6 text-end"> 
+         <a asp-page="/cat/create" class="btn btn-primary"> 
+             Create Category <i class="bi bi-plus"></i> 
+         </a> 
+    </div> 
+    
+ </div> 
+
+
+ <table class="table table-hover"> 
+     <thead> 
+         <tr class="table-secondary"> 
+        <th>Cartegory</th> 
+         <th>Display Order</th> 
+         <th></th> 
+    </tr> 
+     </thead>
+     <tbody> 
+         @foreach(var obj in Model.categoryList){ 
+             <tr> 
+                 <td>@obj.Name</td> 
+                 <td>@obj.DisplayOrder</td> 
+                     <td> 
+
+
+                        <div role="group" class="w-75 btn-group"> 
+                            <a asp-page="cat/edit" asp-route-id="@obj.Id" style="margin-right: 10px;"> 
+                                 <i class="bi bi-pencil-fill" 
+                                   style="color: blue; cursor: pointer;" 
+                                   onmouseover="this.style.color='#4d94ff'" 
+                                  onmouseout="this.style.color='blue'"> 
+                                 </i> 
+                                 edit
+                             </a> 
+                             <a asp-pages="cat/delete" asp-route-id="@obj.Id"> 
+                                 <i class="bi bi-trash3-fill" 
+                                    style="color: red; cursor: pointer;" 
+                                    onmouseover="this.style.color='#ff4d4d'" 
+                                    onmouseout="this.style.color='red'"> 
+                                 </i> 
+                                 delete
+                             </a> 
+                         </div> 
+
+                        
+                     </td> 
+
+             </tr> 
+         } 
+     </tbody> 
+ </table> 
+</div>

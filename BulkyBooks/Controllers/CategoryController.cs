@@ -1,5 +1,6 @@
-﻿using BulkyBooks.Data;
-using BulkyBooks.Models;
+﻿
+using Bulky.Models.Models;
+using BulkyBooks.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BulkyBooks.Controllers
@@ -11,6 +12,7 @@ namespace BulkyBooks.Controllers
         {
             _db = db;
         }
+       
         public IActionResult Index()
         {
             List<CategoryModel> objCategoryList = _db.categories.ToList();

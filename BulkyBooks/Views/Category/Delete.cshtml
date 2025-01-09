@@ -1,9 +1,10 @@
-﻿@model CategoryModel
+﻿@using Bulky.Models.Models
+@model CategoryModel
 
 
 <h2 class="text-primary">Delete Confirmation</h2>
 
-<div class="border p-3 mt-4">
+<div class="border form-floating p-3 mt-4">
     <p>Are you sure you want to delete the category</p>
 
     <form asp-action="Delete" method="post">
