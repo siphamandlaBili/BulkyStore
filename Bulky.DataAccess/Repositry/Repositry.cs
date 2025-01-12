@@ -26,22 +26,27 @@ namespace Bulky.DataAccess.Repositry
 
         public T Get(Expression<Func<T, bool>> filter)
         {
-            throw new NotImplementedException();
+            IQueryable<T> query = dbset;
+            query = query.Where(filter);
+
+            return query.FirstOrDefault();
         }
 
         public IEnumerable<T> GetAll()
         {
-            throw new NotImplementedException();
+            IQueryable<T> query = dbset;
+
+            return query.ToList();
         }
 
         public void Remove(T entity)
         {
-            throw new NotImplementedException();
+            dbset.Remove(entity);
         }
 
         public void RemoveRange(IEnumerable<T> entity)
         {
-            throw new NotImplementedException();
+            dbset.RemoveRange(entity);
         }
     }
 }
